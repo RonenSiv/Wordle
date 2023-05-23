@@ -24,4 +24,7 @@ Welcome to the Wordle project! This interactive word guessing game brings you ho
 3. Start the development server: `npm start`
 4. Access the game in your browser at `http://localhost:3000`
 
+## Gameplay 📷
+<img width="784" alt="image" src="https://github.com/RonenSiv/Wordle/assets/57030036/ba71b495-800e-4bf9-9199-e667ff38ecbd">
+
 Enjoy playing Wordle and have a fantastic time guessing those words! 🎉🔍
