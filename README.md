@@ -2,6 +2,7 @@
 
 Welcome to the Wordle project! This interactive word guessing game brings you hours of fun and challenge. Test your word-guessing skills and see if you can uncover the hidden words!
 
+#### You can enjoy my version of the game at `https://wordle.ronensivak.com/`
 ## How to Play 🕹️
 
 1. Guess the hidden word: Each round presents you with a mystery word.
