@@ -1,0 +1,188 @@
+.game-container {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*padding: 2rem;*/
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+
+.transition-effect1 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background-color: var(--correct);
+}
+
+.transition-effect2 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: var(--present);
+}
+
+.transition-effect3 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color:var(--absent);
+}
+
+#help-modal {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 12.5%;
+    left: 12.5%;
+    transform: translate(-50%, 50%);
+    /*margin: 0 auto;*/
+    z-index: 5;
+    background: var(--glass);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    /*overflow: hidden;*/
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#close-help-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    height: 2rem;margin: 1rem 2rem 1rem 1rem;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.pop-up {
+    position: absolute;
+    /*width: 50%;*/
+    height: auto;
+    top: 35%;
+    /*transform: translate(-50%, 50%);*/
+    /*margin: 0 auto;*/
+    z-index: 5;
+    background: var(--keyboard-bg);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    /*overflow: hidden;*/
+    display: none;
+    align-items: center;
+    justify-content: center;
+    /*color: #fff;*/
+}
+
+.pop-up .pop-up-content {
+    margin-top: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pop-up .pop-up-content .pop-up-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.pop-up .pop-up-content .pop-up-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.pop-up .pop-up-content .pop-up-button {
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: var(--correct);
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pop-up .pop-up-content .pop-up-button button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip[tooltip="true"] {
+    position: relative;
+    display: inline-block;
+    --scale: 0;
+    --tooltipColor: #333;
+    --arrow-size: 0.5rem;
+}
+
+.tooltip[tooltip="true"]::before,
+.tooltip[tooltip="true"]::after {
+    position: absolute;
+    top: 0.25rem;
+    left: 50%;
+    transform: translate(-50%, var(--translate-y,0)) scale(var(--scale));
+    transform-origin: top center;
+    transition: transform 0.5s ease;
+}
+
+.tooltip[tooltip="true"]::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    content: attr(tooltip-text);
+    font-size: 1.5rem;
+    color: white;
+    padding: .5rem;
+    width: max-content;
+    max-width: 100px;
+    background-color: var(--tooltipColor);
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.tooltip[tooltip="true"]::after {
+    content: "";
+    --translate-y: calc(5.7 * var(--arrow-size));
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltipColor);
+    transform-origin: bottom center;
+}
+
+.tooltip[tooltip="true"]:hover::before,
+.tooltip[tooltip="true"]:hover::after{
+    --scale:1;
+    transition: transform 0.5s ease;
+}

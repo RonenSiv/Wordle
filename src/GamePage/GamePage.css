@@ -1,0 +1,140 @@
+#game-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: center;
+    width: clamp(100%, 50vw, 50vw);
+    height:90vh;
+
+    padding: 2rem 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1000px;
+
+    background: var(--glass);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+#game-page h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#game-page h2 {
+    font-size: 2rem;
+}
+
+#game-page hr {
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+#game {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#game-board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.3rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.tile {
+    border: 2px solid var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+
+    /*min-width: 30px;*/
+    /*min-height: 30px;*/
+    cursor: pointer;
+    border-radius: 0.3rem;
+}
+
+@media (min-width: 500px) {
+    .tile {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 500px) {
+    .tile {
+        width: 12vw;
+        height: 12vw;
+    }
+}
+
+#game-kb-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align the keyboard to the bottom */
+    margin-top: 3rem;
+    height: 200px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto 0.3rem;
+    touch-action: manipulation;
+}
+
+.keyboard-row button {
+    font-weight: bold;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    border: none;
+    padding: 0 0.7rem;
+    cursor: pointer;
+    background-color: var(--keyboard-bg);
+    color: var(--keyboard-color);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin: 0 0.3rem;
+    border-radius: 0.3rem;
+    user-select: none;
+    height: 48px;
+}
+
+.keyboard-row button:active {
+    background-color: var(--keyboard-color);
+    color: var(--keyboard-bg);
+}
+
+.keyboard-row button:focus {
+    outline: none;
+}
+
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+}
+
+.space-half {
+    flex-grow: 0.5;
+}
