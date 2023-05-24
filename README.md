@@ -26,5 +26,9 @@ Welcome to the Wordle project! This interactive word guessing game brings you ho
 
 ## Gameplay 📷
 <img width="784" alt="image" src="https://github.com/RonenSiv/Wordle/assets/57030036/ba71b495-800e-4bf9-9199-e667ff38ecbd">
+<img width="753" alt="image" src="https://github.com/RonenSiv/Wordle/assets/57030036/f23c2f64-aa52-4773-b6c9-c2e1a4d64559">
+<img width="755" alt="image" src="https://github.com/RonenSiv/Wordle/assets/57030036/3fb63fb5-778d-470c-8e22-da5bd1b95659">
+<img width="743" alt="image" src="https://github.com/RonenSiv/Wordle/assets/57030036/937067b9-6c10-4ec0-98f8-f6ab00b81532">
+
 
 Enjoy playing Wordle and have a fantastic time guessing those words! 🎉🔍
