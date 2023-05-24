@@ -34,10 +34,6 @@ export const GameKB = ({ handleUpdateGuessedWords, lettersStates }) => {
             backgroundColor: background,
             color: color,
           }}
-          whileHover={{
-            scale: 1.1,
-            backgroundColor: "var(--keyboard-hover)",
-          }}
         >
           {keyarray[i]}
         </motion.button>

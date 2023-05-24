@@ -70,6 +70,7 @@
     min-width: 60px;
     min-height: 60px;
     cursor: pointer;
+    border-radius: 0.3rem;
 }
 
 #game-kb-container {
@@ -90,7 +91,7 @@
 
 .keyboard-row button {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border: none;
     padding: 0 0.7rem;
     cursor: pointer;

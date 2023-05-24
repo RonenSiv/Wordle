@@ -18,7 +18,7 @@ export const HelpModal = () => {
             setTimeout(() => {
               modal.classList.remove(
                 "animate__animated",
-                "animate__animate__backOutDown"
+                "animate__backOutDown"
               );
               modal.style.display = "none";
               document.getElementsByTagName("body")[0].style.overflowY = "auto";
