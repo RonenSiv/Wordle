@@ -10,12 +10,12 @@ export const WelcomePage = ({ pageStyle, enableStart = true }) => {
   const [word, setWord] = useState("");
 
   const style = {
-    width: "30px",
-    height: "30px",
+    width: "clamp(40px, 5vw, 60px)",
+    height: "clamp(40px, 5vw, 60px)",
     display: "inline-block",
     textAlign: "center",
     margin: "3px",
-    lineHeight: "60px",
+    lineHeight: "clamp(40px, 5vw, 60px)",
     color: "#fff",
   };
   const initial = {
@@ -205,9 +205,7 @@ export const WelcomePage = ({ pageStyle, enableStart = true }) => {
               }, 2000)}
             </AnimatePresence>
             <AnimatePresence mode="wait">
-              <motion.div>
-                <GamePage genWord={word} generateWord={generateWord} />
-              </motion.div>
+              <GamePage genWord={word} generateWord={generateWord} />
             </AnimatePresence>
           </>
         )}

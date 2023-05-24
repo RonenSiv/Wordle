@@ -1,13 +1,12 @@
 .game-container {
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: auto;
-    padding: 2rem;
+    /*padding: 2rem;*/
     border-radius: 1rem;
     overflow: hidden;
+
 }
 
 .transition-effect1 {
@@ -47,7 +46,9 @@
     position: absolute;
     width: 75%;
     height: 75%;
-    /*transform: translate(-50%, 50%);*/
+    top: 12.5%;
+    left: 12.5%;
+    transform: translate(-50%, 50%);
     /*margin: 0 auto;*/
     z-index: 5;
     background: var(--glass);
@@ -139,4 +140,49 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.tooltip[tooltip="true"] {
+    position: relative;
+    display: inline-block;
+    --scale: 0;
+    --tooltipColor: #333;
+    --arrow-size: 0.5rem;
+}
+
+.tooltip[tooltip="true"]::before,
+.tooltip[tooltip="true"]::after {
+    position: absolute;
+    top: 0.25rem;
+    left: 50%;
+    transform: translate(-50%, var(--translate-y,0)) scale(var(--scale));
+    transform-origin: top center;
+    transition: transform 0.5s ease;
+}
+
+.tooltip[tooltip="true"]::before {
+    --translate-y: calc(100% + var(--arrow-size));
+    content: attr(tooltip-text);
+    font-size: 1.5rem;
+    color: white;
+    padding: .5rem;
+    width: max-content;
+    max-width: 100px;
+    background-color: var(--tooltipColor);
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.tooltip[tooltip="true"]::after {
+    content: "";
+    --translate-y: calc(5.7 * var(--arrow-size));
+    border: var(--arrow-size) solid transparent;
+    border-bottom-color: var(--tooltipColor);
+    transform-origin: bottom center;
+}
+
+.tooltip[tooltip="true"]:hover::before,
+.tooltip[tooltip="true"]:hover::after{
+    --scale:1;
+    transition: transform 0.5s ease;
 }

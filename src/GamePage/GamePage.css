@@ -3,13 +3,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    align-self: center;
+    width: clamp(100%, 50vw, 50vw);
+    height:90vh;
 
-    width: 50vw;
-    height: auto;
-
-    padding: 2rem;
+    padding: 2rem 0;
     border-radius: 1rem;
     overflow: hidden;
+    margin: 0 auto;
+    max-width: 1000px;
 
     background: var(--glass);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -67,10 +69,25 @@
     margin-top: 0.5rem;
     font-size: 2rem;
     font-weight: bold;
-    min-width: 60px;
-    min-height: 60px;
+
+    /*min-width: 30px;*/
+    /*min-height: 30px;*/
     cursor: pointer;
     border-radius: 0.3rem;
+}
+
+@media (min-width: 500px) {
+    .tile {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 500px) {
+    .tile {
+        width: 12vw;
+        height: 12vw;
+    }
 }
 
 #game-kb-container {
@@ -91,7 +108,7 @@
 
 .keyboard-row button {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     border: none;
     padding: 0 0.7rem;
     cursor: pointer;
