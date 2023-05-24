@@ -365,6 +365,7 @@ export const GamePage = ({ genWord, generateWord }) => {
   };
 
   const handleGiveUp = () => {
+    if (isGameOver) return;
     setIsGameOver(true);
     setIsGameWon(false);
     //draw the words on the tiles
@@ -394,6 +395,10 @@ export const GamePage = ({ genWord, generateWord }) => {
           handleKeyDown(event);
         }}
         tabIndex="0"
+        initial={{ display: "none", opacity: 0 }}
+        animate={{ display: "flex", opacity: 1 }}
+        exit={{ display: "none", opacity: 0 }}
+        transition={{ duration: 2, delay: 2 }}
       >
         <div id="game">
           <h1>
