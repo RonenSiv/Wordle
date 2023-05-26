@@ -1,16 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { GameKB } from "./GameKB";
+import React, { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
-export const GameBoard = ({
-  handleUpdateGuessedWords,
-  lettersStates,
-  redraw,
-  setRedraw,
-  tiles,
-  setTiles,
-  isGameWon,
-}) => {
+export const GameBoard = ({ redraw, setRedraw, tiles, setTiles }) => {
   const createBoard = () => {
     const tiles = [];
 

@@ -503,13 +503,10 @@ export const GamePage = ({ genWord, generateWord }) => {
           )}
           {isGameOver && drawPopUp()}
           <GameBoard
-            handleUpdateGuessedWords={handleUpdateGuessedWords}
-            lettersStates={lettersStates}
             redraw={redraw}
             setRedraw={setRedraw}
             tiles={tiles}
             setTiles={setTiles}
-            isGameWon={isGameWon}
           />
 
           {isGameOver && (
