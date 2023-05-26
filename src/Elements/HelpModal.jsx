@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { WelcomePage } from "../WelcomePage/WelcomePage";
 
-export const HelpModal = () => {
+export const HelpModal = ({ children }) => {
   return (
     <>
       <div id="help-modal">
@@ -35,7 +34,7 @@ export const HelpModal = () => {
           id="help-modal-content"
           style={{ overflowY: "auto", height: "100%" }}
         >
-          <WelcomePage enableStart={false} />
+          {children}
         </div>
       </div>
     </>

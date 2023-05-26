@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import "animate.css";
 import { GameKB } from "./GameKB";
 import { PopUp } from "../Elements/PopUp";
+import { Rules } from "../WelcomePage/Rules";
+import { HelpModal } from "../Elements/HelpModal";
 
 export const GamePage = ({ genWord, generateWord }) => {
   const word = genWord;
@@ -17,7 +19,6 @@ export const GamePage = ({ genWord, generateWord }) => {
 
   const [wordCharMap, setWordCharMap] = React.useState(new Map());
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
-  const flipAnimation = 1000;
   const flipAnimationDelay = 300;
   const availableLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const availableLettersArray = availableLetters.split("");
@@ -329,7 +330,7 @@ export const GamePage = ({ genWord, generateWord }) => {
 
   async function handleKeyDown(event) {
     const keyId = `key-${event.key}`;
-    const result = await handleUpdateGuessedWords(keyId.substring(4));
+    await handleUpdateGuessedWords(keyId.substring(4));
   }
 
   const checkWordValidity = async (word) => {
@@ -389,6 +390,9 @@ export const GamePage = ({ genWord, generateWord }) => {
 
   return (
     <>
+      <HelpModal>
+        <Rules enableStart={false} />
+      </HelpModal>
       <motion.div
         id="game-page"
         onKeyDown={(event) => {
@@ -499,13 +503,10 @@ export const GamePage = ({ genWord, generateWord }) => {
           )}
           {isGameOver && drawPopUp()}
           <GameBoard
-            handleUpdateGuessedWords={handleUpdateGuessedWords}
-            lettersStates={lettersStates}
             redraw={redraw}
             setRedraw={setRedraw}
             tiles={tiles}
             setTiles={setTiles}
-            isGameWon={isGameWon}
           />
 
           {isGameOver && (
